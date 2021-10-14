@@ -7,6 +7,7 @@ class CoinInfo():
         Return Value: None
     """
     def __init__(self, name):
+        self.symbol = None
         self.name = name
         self.purchase = None
         self.sell = None
@@ -29,30 +30,33 @@ def create_url_blockchain(symbol):
     return (response.json()['price_24h'], response.json()['last_trade_price'])
 
 def coinbase():
-    coin_list = ['BTC-USD', 'ETH-USD']
+    coin_symbols = ['BTC-USD', 'ETH-USD']
+    coin_names = ['Bitcoin', 'Etherium']
     dict_of_coins = {}
 
-    for coin in coin_list:
-        dict_of_coins[coin] = CoinInfo(coin)
-        dict_of_coins[coin].name = coin
-        dict_of_coins[coin].sell = create_url_coinbase(coin, 'sell')
-        dict_of_coins[coin].purchase = create_url_coinbase(coin, 'buy')
+    for coin in range(len(coin_names)):
+        dict_of_coins[coin_names[coin]] = CoinInfo(coin_names[coin])
+        dict_of_coins[coin_names[coin]].symbol = coin_symbols[coin]
+        dict_of_coins[coin_names[coin]].sell = create_url_coinbase(coin_symbols[coin], 'sell')
+        dict_of_coins[coin_names[coin]].purchase = create_url_coinbase(coin_symbols[coin], 'buy')
 
+    print(dict_of_coins['Bitcoin'].sell, dict_of_coins['Bitcoin'].purchase)
     return(dict_of_coins)
+coinbase()
 
 def blockchain():
-    coin_list = ['BTC-USD', 'ETH-USD']
-
-    #make another list with the names of the coins
-
+    coin_symbols = ['BTC-USD', 'ETH-USD', '']
+    coin_names = ['Bitcoin', 'Etherium', 'Hope']
     dict_of_coins = {}
 
-    for coin in coin_list:
-        dict_of_coins[coin] = CoinInfo(coin)
-        dict_of_coins[coin].name = coin
-        dict_of_coins[coin].sell, dict_of_coins[coin].purchase = create_url_blockchain(coin)
+    for coin in range(len(coin_symbols)):
+        dict_of_coins[coin_names[coin]] = CoinInfo(coin_names[coin])
+        dict_of_coins[coin_names[coin]].symbol = coin_symbols[coin]
+        dict_of_coins[coin_names[coin]].sell, dict_of_coins[coin_names[coin]].purchase = create_url_blockchain(coin_symbols[coin])
 
+    print(dict_of_coins['Bitcoin'].sell, dict_of_coins['Bitcoin'].purchase)
     return(dict_of_coins)
+blockchain()
 
 
 def find_best():
@@ -71,4 +75,4 @@ def find_best():
     print(dict_of_coins_blockchain)
     print(dict_of_coins_coinbase)
 
-find_best()
+# find_best()
