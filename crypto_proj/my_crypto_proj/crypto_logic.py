@@ -30,6 +30,11 @@ def create_url_blockchain(symbol):
     return (response.json()['price_24h'], response.json()['last_trade_price'])
 
 def coinbase():
+    """Purpose: To obtain selling and purchase price of inputted coins on coinbase
+        Parameters: None
+        Return Value: dict_of_coins = A dictionary whos keys are the names of the inputted coins
+                    and values are CoinInfo objects containing name, symbol, sell, and purchase price
+    """
     coin_symbols = ['BTC-USD', 'ETH-USD']
     coin_names = ['Bitcoin', 'Etherium']
     dict_of_coins = {}
@@ -45,6 +50,11 @@ def coinbase():
 coinbase()
 
 def blockchain():
+    """Purpose: To obtain selling and purchase price of inputted coins on blockchain
+        Parameters: None
+        Return Value: dict_of_coins = A dictionary whos keys are the names of the inputted coins
+                    and values are CoinInfo objects containing name, symbol, sell, and purchase price
+    """
     coin_symbols = ['BTC-USD', 'ETH-USD']
     coin_names = ['Bitcoin', 'Etherium']
     dict_of_coins = {}
