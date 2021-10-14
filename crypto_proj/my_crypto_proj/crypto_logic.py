@@ -45,8 +45,8 @@ def coinbase():
 coinbase()
 
 def blockchain():
-    coin_symbols = ['BTC-USD', 'ETH-USD', '']
-    coin_names = ['Bitcoin', 'Etherium', 'Hope']
+    coin_symbols = ['BTC-USD', 'ETH-USD']
+    coin_names = ['Bitcoin', 'Etherium']
     dict_of_coins = {}
 
     for coin in range(len(coin_symbols)):
