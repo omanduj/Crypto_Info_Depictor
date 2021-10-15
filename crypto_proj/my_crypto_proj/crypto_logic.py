@@ -3,8 +3,8 @@ import json
 
 class CoinInfo():
     """Purpose: To crease an object to hold all info on coins
-        Parameters: None
-        Return Value: None
+       Parameters: None
+       Return Value: None
     """
     def __init__(self, name): #Do I need name attribute here?
         self.symbol = None
@@ -13,31 +13,29 @@ class CoinInfo():
         self.purchase = None
         self.sell = None
 
-
 def create_url_coinbase(symbol, action):
     """Purpose: To create the required URL to get info from coinbase
-        Parameters: symbol = The symbol of the coin, action = whether you are buying or selling a coin
-        Return Value: The purchase and sell price for a given coin
+       Parameters: symbol = The symbol of the coin, action = whether you are buying or selling a coin
+       Return Value: The purchase and sell price for a given coin
     """
     response = requests.request('Get', 'https://api.coinbase.com/v2/prices/{}/{}'.format(symbol, action))
     return response.json()['data']['amount']
 
 def create_url_blockchain(symbol):
     """Purpose: To create the required URL to get info from blockchain
-        Parameters: symbol = The symbol of the coin
-        Return Value: The purchase and sell price for a given coin
+       Parameters: symbol = The symbol of the coin
+       Return Value: The purchase and sell price for a given coin
     """
     response = requests.request('Get', 'https://api.blockchain.com/v3/exchange/tickers/{}'.format(symbol))
     return (response.json()['price_24h'], response.json()['last_trade_price'])
 
-def coinbase():
+def coinbase(coin_symbols, coin_names):
     """Purpose: To obtain selling and purchase price of inputted coins on coinbase
-        Parameters: None
-        Return Value: dict_of_coins = A dictionary whos keys are the names of the inputted coins
+       Parameters: coin_symbols = A list of symbols representing the coin
+                    coin_names = A list containing names of the coins
+       Return Value: dict_of_coins = A dictionary whos keys are the names of the inputted coins
                     and values are CoinInfo objects containing name, symbol, sell, and purchase price
     """
-    coin_symbols = ['BTC-USD', 'ETH-USD', 'DOGE-USD']
-    coin_names = ['Bitcoin', 'Etherium', 'Dogecoin']
     dict_of_coins = {}
 
     for coin in range(len(coin_names)):
@@ -49,15 +47,13 @@ def coinbase():
 
     return(dict_of_coins)
 
-
-def blockchain():
+def blockchain(coin_symbols, coin_names):
     """Purpose: To obtain selling and purchase price of inputted coins on blockchain
-        Parameters: None
-        Return Value: dict_of_coins = A dictionary whos keys are the names of the inputted coins
+       Parameters: coin_symbols = A list of symbols representing the coin
+                    coin_names = A list containing names of the coins
+       Return Value: dict_of_coins = A dictionary whos keys are the names of the inputted coins
                     and values are CoinInfo objects containing name, symbol, sell, and purchase price
     """
-    coin_symbols = ['BTC-USD', 'ETH-USD', 'DOGE-USD']
-    coin_names = ['Bitcoin', 'Etherium', 'Dogecoin']
     dict_of_coins = {}
 
     for coin in range(len(coin_symbols)):
@@ -68,16 +64,16 @@ def blockchain():
 
     return(dict_of_coins)
 
-
-def find_best():
+def find_best(coin_symbols, coin_names):
     """Purpose: To identify the best location to purchase and sell a given coin
-       Parameters: None
+       Parameters: coin_symbols = A list of symbols representing the coin
+                    coin_names = A list containing names of the coins
        Return Value: best_buy = A list of the best locations to buy each respective coin,
                      best_sell = A list of the best locations to sell each respective coin
        Note: If adding a new exchanger, make sure to edit for loop to contian new dictionary's coins
     """
-    dict_of_coins_blockchain = blockchain()
-    dict_of_coins_coinbase = coinbase()
+    dict_of_coins_blockchain = blockchain(coin_symbols, coin_names)
+    dict_of_coins_coinbase = coinbase(coin_symbols, coin_names)
 
     best_buy = []
     best_sell = []
@@ -94,6 +90,6 @@ def find_best():
 
         if float(dict_of_coins_coinbase[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
             best_sell.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].sell))
-    return(best_buy, best_sell)
 
-find_best()
+    return(best_buy, best_sell)
+find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
