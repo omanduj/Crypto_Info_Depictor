@@ -84,19 +84,18 @@ def find_best():
     best_buy = []
     best_sell = []
 
-    for i in dict_of_coins_blockchain.keys():
-        if float(dict_of_coins_blockchain[i].purchase) == min(float(dict_of_coins_blockchain[i].purchase), float(dict_of_coins_coinbase[i].purchase)):
-            best_buy.append((dict_of_coins_blockchain[i].name, dict_of_coins_blockchain[i].exchanger_name, dict_of_coins_blockchain[i].purchase))
+    for coin in dict_of_coins_blockchain.keys():
+        if float(dict_of_coins_blockchain[coin].purchase) == min(float(dict_of_coins_blockchain[coin].purchase), float(dict_of_coins_coinbase[coin].purchase)):
+            best_buy.append((dict_of_coins_blockchain[coin].name, dict_of_coins_blockchain[coin].exchanger_name, dict_of_coins_blockchain[coin].purchase))
 
-        if float(dict_of_coins_coinbase[i].purchase) == min(float(dict_of_coins_blockchain[i].purchase), float(dict_of_coins_coinbase[i].purchase)):
-            best_buy.append((dict_of_coins_coinbase[i].name, dict_of_coins_coinbase[i].exchanger_name, dict_of_coins_coinbase[i].purchase))
+        if float(dict_of_coins_coinbase[coin].purchase) == min(float(dict_of_coins_blockchain[coin].purchase), float(dict_of_coins_coinbase[coin].purchase)):
+            best_buy.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].purchase))
 
-        if float(dict_of_coins_blockchain[i].sell) == max(float(dict_of_coins_blockchain[i].sell), float(dict_of_coins_coinbase[i].sell)):
-            best_sell.append((dict_of_coins_blockchain[i].name, dict_of_coins_blockchain[i].exchanger_name, dict_of_coins_blockchain[i].sell))
+        if float(dict_of_coins_blockchain[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
+            best_sell.append((dict_of_coins_blockchain[coin].name, dict_of_coins_blockchain[coin].exchanger_name, dict_of_coins_blockchain[coin].sell))
+        if float(dict_of_coins_coinbase[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
+            best_sell.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].sell))
 
-        if float(dict_of_coins_coinbase[i].sell) == max(float(dict_of_coins_blockchain[i].sell), float(dict_of_coins_coinbase[i].sell)):
-            best_sell.append((dict_of_coins_coinbase[i].name, dict_of_coins_coinbase[i].exchanger_name, dict_of_coins_coinbase[i].sell))
-
-    return (best_buy, best_sell)
+    return(best_buy, best_sell)
 
 find_best()
