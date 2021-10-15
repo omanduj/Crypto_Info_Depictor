@@ -92,4 +92,4 @@ def find_best(coin_symbols, coin_names):
             best_sell.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].sell))
 
     return(best_buy, best_sell)
-find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
+# find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
