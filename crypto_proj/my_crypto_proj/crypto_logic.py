@@ -67,7 +67,6 @@ def blockchain():
         dict_of_coins[coin_names[coin]].sell, dict_of_coins[coin_names[coin]].purchase = create_url_blockchain(coin_symbols[coin])
 
     return(dict_of_coins)
-blockchain()
 
 
 def find_best():
@@ -75,7 +74,6 @@ def find_best():
        Parameters: None
        Return Value: best_buy = A list of the best locations to buy each respective coin,
                      best_sell = A list of the best locations to sell each respective coin
-
        Note: If adding a new exchanger, make sure to edit for loop to contian new dictionary's coins
     """
     dict_of_coins_blockchain = blockchain()
@@ -93,9 +91,9 @@ def find_best():
 
         if float(dict_of_coins_blockchain[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
             best_sell.append((dict_of_coins_blockchain[coin].name, dict_of_coins_blockchain[coin].exchanger_name, dict_of_coins_blockchain[coin].sell))
+
         if float(dict_of_coins_coinbase[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
             best_sell.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].sell))
-
     return(best_buy, best_sell)
 
 find_best()
