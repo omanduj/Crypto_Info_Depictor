@@ -18,7 +18,7 @@ body {
      /* used to  letter color */
      text-align: center;
      /* used to align text in center of a tag */
-     padding-bottom: 2.5em;
+     padding-bottom: 4em;
      /* used to add empty space at bottom of a tag */
  }
 
@@ -38,7 +38,7 @@ body {
 
 
 section {
-    margin: 0 1em;
+    margin: 0 3em;
 }
 
 h1 {
@@ -64,7 +64,7 @@ h1 span {
 
 .form-container {
     background-color: white;
-    margin: 2em -1em 0;
+    margin: 2em .5em 0;
     border-radius: 3em;
     padding: 2em
 }
@@ -73,8 +73,8 @@ label {
     color: #478953 ;
     display: block;
     font-weight: bold;
-    margin-bottom: 1em;
-    font-size: 1.2em;
+    margin-bottom: .5em;
+    font-size: 2em;
 }
 
 input[type=text] {
@@ -145,9 +145,17 @@ h2 {
         margin: 0em 4em;
     }
     .form-contianer {
-        margin: 2em 4em 0;
+        margin: 2em 4em 0 ;
     }
-
+    .main-column {
+        float: right;
+        display: block;
+        width: 50%;
+    }
+    .side-column {
+        float: right;
+        width: 50%;
+    }
     section.authentic{
         display: grid;
         grid-template-columns: repeat(2, 50%);
@@ -167,10 +175,9 @@ h2 {
 }
 
 div[class=arrow] {
-    margin-top: 4%;
+    margin-top: 30%;
     margin-bottom: 2%;
 }
-
 
 @keyframes fadeIn {
     from {
@@ -183,13 +190,3 @@ div[class=arrow] {
     }
 
 }
-/* h1 span::before {
-    content: ' ';
-    position: absolute;
-    width: 3em;
-    background: blue;
-    height: .4em
-    bottom: 0;
-    z-index: -1;
-    margin-left: -.3em;
-} */
