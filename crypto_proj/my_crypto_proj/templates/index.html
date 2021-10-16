@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <title>Hello from Flask</title>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-      <link rel="stylesheet" href="main.css">
-    <head>
+    <head><link rel="icon" type="image/png" href= "{{ url_for('static',filename='css/money_bag.png') }}" /></head>
+    <title>Crypto Info</title>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
     <body>
          <div class="hero-bg">
              <section class="top">
                  <header>
-                     <a href="#">yummy.eats</a>
+                     <a href="https://www.linkedin.com/in/oscar--mandujano/" target="_blank">Check Me Out</a>
                  </header>
-                 <h1><span>The Healthy</span> Eating Experience</h1>
+                 <h1><span>Keep With</span> The Current Prices</h1>
 
-                 <p>lorem impsum dolor colr</p>
-                 <div class="from container">
-                     <form action="">
-                         <div class="form-left">
-                             <label for="city">Enter your City</label>
-                             <input type="text" name="city" id="city">
-                             <p>Example: "San Diego"</p>
+                 <p>Check Out the Purchase and Selling Price of the Hottest Coins Here</p>
+
+
+                     <div class="column">
+                        <div class="form-container">
+                             <form action="">
+                                 <div class="form-left">
+                                     <label for="city">Bitcoin</label>
+                                     <input type="text" name="city" id="city">
+                                     <p>Best place to buy is: </p>
+                                 </div>
+
+                                 <input type="button" value="Buy Now"></input>
+                             </form>
                          </div>
-
-                         <button type="button" value="Find Food Now"></button>
-                     </form>
+                     </div>
+                     <div class="column">
+                         <div class="form-container">
+                             <form action="">
+                                 <div class="form-left">
+                                     <label for="city">Etherium</label>
+                                     <input type="text" name="city" id="city">
+                                     <p>Best place to buy is: </p>
+                                 </div>
+                                 <input type="button" value="Buy Now"></input>
+                             </form>
+                         </div>
+                     </div>
+                 <div class="arrow">
+                     <img src="https://img.icons8.com/color-glass/96/000000/chevron-down.png"/>
                  </div>
              </section>
          </div>
-    <section class="authentic">
-        <div class="right-call">
-            <h2>Authetic Awesome</h2>
-            <p>lorem impsum</p>
-        </div>
-        <!-- <img url('https://images.unsplash.com/photo-1617118601840-aa51b7d216ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80') alt="Picture of Piggy Bank"> -->
-    </section>
-
+        <section class="authentic">
+            <div class="right-col">
+                <h2>Check Out Some Other Prices!</h2>
+                <p>lorem impsum</p>
+            </div>
+            <img src='static/css/piggy_bank.jpg' alt="Picture of Piggy Bank">
+        </section>
     </body>
-</html>
