@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 @app.route("/coin_info", methods = ["GET"])
 def check_coinbase_api():
-    x,y= find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
+    x = find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
     return(jsonify({'coin_info_buy': x,
-                    'coin_info_sell': y
+                    # 'coin_info_sell': y
                     }))
 
 @app.route("/weblook", methods = ["GET"])
