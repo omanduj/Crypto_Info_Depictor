@@ -175,13 +175,12 @@ h2 {
     .hero-bg p[class=suggestion] {
         margin-top: 6.5em;
     }
-    section.authentic{
+    section.authentic {
         display: grid;
         grid-template-columns: repeat(2, 50%);
         grid-template-areas:
             "piggy content";
     }
-
     .right-col {
         grid- area: content;
         padding: 0 10%;
@@ -192,12 +191,10 @@ h2 {
         grid- area: piggy;
     }
 }
-
 div[class=arrow] {
     margin-top: 30%;
     margin-bottom: -3%;
 }
-
 div[class=frog] {
     margin-top: 33%;
 }
@@ -211,5 +208,4 @@ div[class=frog] {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
