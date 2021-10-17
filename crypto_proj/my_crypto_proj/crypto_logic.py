@@ -67,29 +67,28 @@ def blockchain(coin_symbols, coin_names):
 def find_best(coin_symbols, coin_names):
     """Purpose: To identify the best location to purchase and sell a given coin
        Parameters: coin_symbols = A list of symbols representing the coin
-                    coin_names = A list containing names of the coins
-       Return Value: best_buy = A list of the best locations to buy each respective coin,
-                     best_sell = A list of the best locations to sell each respective coin
+                   coin_names = A list containing names of the coins
+       Return Value: dict_of_locations = A dictionary containing names of companies as keys, whose values
+                            are company name and X price
        Note: If adding a new exchanger, make sure to edit for loop to contian new dictionary's coins
     """
     dict_of_coins_blockchain = blockchain(coin_symbols, coin_names)
     dict_of_coins_coinbase = coinbase(coin_symbols, coin_names)
-
-    best_buy = []
-    best_sell = []
+    dict_of_locations = {'best_buy': {}, 'best_sell': {}}
 
     for coin in dict_of_coins_blockchain.keys():
         if float(dict_of_coins_blockchain[coin].purchase) == min(float(dict_of_coins_blockchain[coin].purchase), float(dict_of_coins_coinbase[coin].purchase)):
-            best_buy.append((dict_of_coins_blockchain[coin].name, dict_of_coins_blockchain[coin].exchanger_name, dict_of_coins_blockchain[coin].purchase))
+            dict_of_locations['best_buy'][dict_of_coins_blockchain[coin].name] = {'company': dict_of_coins_blockchain[coin].exchanger_name, 'purchase': dict_of_coins_blockchain[coin].purchase}
 
         if float(dict_of_coins_coinbase[coin].purchase) == min(float(dict_of_coins_blockchain[coin].purchase), float(dict_of_coins_coinbase[coin].purchase)):
-            best_buy.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].purchase))
+            dict_of_locations['best_buy'][dict_of_coins_blockchain[coin].name] = {'company': dict_of_coins_blockchain[coin].exchanger_name, 'purchase': dict_of_coins_blockchain[coin].purchase}
 
         if float(dict_of_coins_blockchain[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
-            best_sell.append((dict_of_coins_blockchain[coin].name, dict_of_coins_blockchain[coin].exchanger_name, dict_of_coins_blockchain[coin].sell))
+            dict_of_locations['best_sell'][dict_of_coins_blockchain[coin].name] = {'company': dict_of_coins_blockchain[coin].exchanger_name, 'purchase': dict_of_coins_blockchain[coin].sell}
 
         if float(dict_of_coins_coinbase[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
-            best_sell.append((dict_of_coins_coinbase[coin].name, dict_of_coins_coinbase[coin].exchanger_name, dict_of_coins_coinbase[coin].sell))
-            
-    return(best_buy, best_sell)
+            dict_of_locations['best_sell'][dict_of_coins_coinbase[coin].name] = {'company': dict_of_coins_coinbase[coin].exchanger_name, 'purchase': dict_of_coins_coinbase[coin].sell}
+    print(dict_of_locations)
+    print()
+    return dict_of_locations
 find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
