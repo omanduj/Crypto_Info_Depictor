@@ -52,6 +52,7 @@ h1 span {
     display: block;
     /* used to make sure nothing is on left or right of tag */
     font-size: 1.4rem;
+    margin-top: -3%;
     position: relative;
     z-index: 1;
 }
@@ -62,11 +63,16 @@ h1 span {
     margin: -3em 1em 3em;
 }
 
+.hero-bg p[class=suggestion] {
+    margin-top: 1.2em;
+}
+
 .form-container {
     background-color: white;
-    margin: 2em .5em 0;
+    margin: 2em 2em 0;
     border-radius: 3em;
-    padding: 2em
+    padding: 2em;
+    /* margin-bottom: .5em; */
 }
 
 label {
@@ -74,21 +80,30 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: .5em;
-    font-size: 2em;
+    font-size: 3em;
 }
 
-input[type=text] {
+.hero-bg label[type=distinguisher] {
+    color: black ;
+    display: block;
+    font-weight: bold;
+    margin-bottom: .5em;
+    font-size: 1em;
+}
+
+label[type=text] {
 /* refets to input tag where type is == text */
     border: 1px solid #707070;
     width: 100%;
     padding: 1em;
+    font-size: 1.5em;
     box-sizing: border-box;
     /* Have to do thise in order to prevent
     extra run off space. Do this when applying
     padding with width */
     border-radius: 3em;
     /* used set appearance 3em = oval 5em = square w/ rounded edges */
-    margin-top: 1.2em;
+    margin-top: .5em;
 }
 
 .form-container p {
@@ -155,6 +170,10 @@ h2 {
     .side-column {
         float: right;
         width: 50%;
+        /* padding-left: .1em; */
+    }
+    .hero-bg p[class=suggestion] {
+        margin-top: 6.5em;
     }
     section.authentic{
         display: grid;
@@ -176,7 +195,11 @@ h2 {
 
 div[class=arrow] {
     margin-top: 30%;
-    margin-bottom: 2%;
+    margin-bottom: -3%;
+}
+
+div[class=frog] {
+    margin-top: 33%;
 }
 
 @keyframes fadeIn {
