@@ -3,7 +3,7 @@ from crypto_logic import find_best, coinbase, blockchain
 
 app = Flask(__name__)
 
-coin_dict = {"Bitcoin": "BTC-USD", "Etherium": "ETH-USD", "Dogecoin": "DOGE-USD"}
+coin_dict = {"Bitcoin": "BTC-USD", "Ethereum": "ETH-USD", "Dogecoin": "DOGE-USD"}
 
 
 @app.route("/coin_info", methods=["GET"])
