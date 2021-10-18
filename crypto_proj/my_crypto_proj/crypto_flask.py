@@ -5,20 +5,17 @@ app = Flask(__name__)
 
 @app.route("/coin_info", methods = ["GET"])
 def check_coinbase_api():
-    x = find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
-    return(jsonify({'coin_info_buy': x,
-                    # 'coin_info_sell': y
+    optimal_coin_info = find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
+    return(jsonify({'coin_info_buy': optimal_coin_info,
                     }))
 
-@app.route("/weblook", methods = ["GET"])
-def website_looker():
+@app.route("/webpage", methods = ["GET"])
+def webpage():
     coinbase_coins = coinbase(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
     blockchain_coins = blockchain(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
-    best_buy_list, best_sell_list = find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
+    optimal_coin_info = find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
 
     return render_template('index.html', coinbase_coins = coinbase_coins, blockchain_coins = blockchain_coins,
-                            best_buy_list = best_buy_list, best_sell_list = best_sell_list)
-
-    # return render_template('index.html')
+                            optimal_coin_info = optimal_coin_info)
 
 app.run(debug=True)
