@@ -1,4 +1,4 @@
-Crpyto Info Shower
+Crpyto Info Depictor
 =======
 
 What you'll see
@@ -25,3 +25,14 @@ In order to run the application, you must first execute the following command:
 
  This will cause the program to run on local host 5000. The webpage is located in the following url:
  >http://127.0.0.1:5000/webpage
+
+ Questionnaire
+ -----------
+ 1. One optimization is allowing the system to fail gracefully. This means allowing coins found at one exchange
+ location to be obtainable, despite not being found in the other exchange place.
+
+ 2. I would say that some portions of over designing this application was allowing for scalability. I believe the way my logic is structured and implemented allows for easily scaling the application to get the prices of many different coins at these two chosen exchange locations. It is also easy to integrate more exchanges, simply by defining the required URL to get API requests. Create a function to return a dictionary of the required values, and then implement the find_best method with output of this function.
+
+ 3. If I had to scale my solution to 100 users/second traffic, I would create a cache of recently searched for coins. Once this data was stored I could simply update it X times every 5 seconds, and use the information stored in the database to increase response time. In other words, this would result in less calls to the exchange companies API, resulting in quicker results. 
+
+ 4. One enhancement I would make would be to allow realtime information from each exchange to be depicted on the webpage.  
