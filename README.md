@@ -18,4 +18,5 @@ This will take you to the webpage depicting the purchase and sell price of Bitco
 You will also find information on Dogecoin at the bottom of the page, also informing on the purchase/selling price of each exchange
 
 The title of each exchange is a link to the homepage of each exchange.
+The buttons on each panel take you to the Coins webpage at the given exchange
 The Check Me Out link is a fun little link to who made the page.
