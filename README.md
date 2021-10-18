@@ -1,11 +1,8 @@
-HelloHeading
+Crpyto Info Shower
 =======
 
-Sub-heading
+How to Run
 -----------
 
-Paragraphs are separated
-by a blank line.
-
-Two spaces at the end of a line  
-produce a line break.
+In order to run the application, you must first execute the following command:
+> poetry run python crypto_proj/crypto_flask.py
