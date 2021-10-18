@@ -60,7 +60,7 @@ def blockchain(coin_symbols, coin_names):
         dict_of_coins[coin_names[coin]] = CoinInfo(coin_names[coin])
         dict_of_coins[coin_names[coin]].symbol = coin_symbols[coin]
         dict_of_coins[coin_names[coin]].exchanger_name = 'Blockchain'
-        dict_of_coins[coin_names[coin]].sell, dict_of_coins[coin_names[coin]].purchase = create_url_blockchain(coin_symbols[coin])
+        dict_of_coins[coin_names[coin]].purchase, dict_of_coins[coin_names[coin]].sell = create_url_blockchain(coin_symbols[coin])
 
     return(dict_of_coins)
 
@@ -88,7 +88,7 @@ def find_best(coin_symbols, coin_names):
 
         if float(dict_of_coins_coinbase[coin].sell) == max(float(dict_of_coins_blockchain[coin].sell), float(dict_of_coins_coinbase[coin].sell)):
             dict_of_locations['best_sell'][dict_of_coins_coinbase[coin].name] = {'company': dict_of_coins_coinbase[coin].exchanger_name, 'purchase': dict_of_coins_coinbase[coin].sell}
-    print(dict_of_locations)
+
     print()
     return dict_of_locations
 find_best(['BTC-USD', 'ETH-USD', 'DOGE-USD'], ['Bitcoin', 'Etherium', 'Dogecoin'])
