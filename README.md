@@ -3,14 +3,14 @@ Crpyto Info Shower
 
 What you'll see
 -----------
-This will take you to the webpage depicting the purchase and sell price of Bitcoin and Ethereum from coinbase and blockchain. It will also show recommendations as to which exchange one should buy and/or sell each coin.
+This project will create a webpage depicting the purchase and sell price of Cryto Currency's, specifically
+Bitcoin and Ethereum from coinbase and blockchain. It will also provide recommendations in regards to what exchange one should buy and/or sell each coin.
 
-You will also find information on Dogecoin at the bottom of the page, also informing on the purchase/selling price of each exchange
+The title of each exchange hovers above the selling/purchase prices of each respective coin. This title also serves as a link to the websites homepage. The text found below the prices is the recommendation in regards where the user should buy and sell each coin to obtain optimal profit. Below this recommendation is a button to the coin information at the exchange name found above.
 
-The title of each exchange is a link to the homepage of each exchange.
-The buttons on each panel take you to the Coins webpage at the given exchange
+You will also find information on Dogecoin at the bottom of the page, also informing on the purchase/selling price of each exchange.
+
 The Check Me Out link is a fun little link to who made the page.
-
 
 How to Run
 -----------
