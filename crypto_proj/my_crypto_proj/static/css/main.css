@@ -91,6 +91,12 @@ label {
     font-size: 1em;
 }
 
+label[type=comparer] {
+    color: white;
+    font-size: 2.3rem;
+    border-radius: 3em;
+}
+
 label[type=text] {
 /* refets to input tag where type is == text */
     border: 1px solid #707070;
@@ -192,7 +198,7 @@ h2 {
     }
 }
 div[class=arrow] {
-    margin-top: 30%;
+    margin-top: 10%;
     margin-bottom: -3%;
 }
 div[class=frog] {
