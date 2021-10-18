@@ -32,9 +32,9 @@ You can visit the following link to get the json representation of the best and 
  Questionnaire
  -----------
  1. One optimization is allowing the system to fail gracefully. This means allowing coins found at one exchange
- location to be obtainable, despite not being found in the other exchange place.
+ location to be obtainable, despite not being found in the other exchange place. Another optimization would lie in how I store data in the logic layer. I believe I could have dealt with any issue of memory usage by creating a database as opposed to making a dictionary of coins again and again, thus increasing speed as well.
+ A final optimization to the program would having the HTML buttons on the front end take you to the website that has the best deal as opposed to linking to the website whose coin information is displayed above them.
 
- add two
 
  2. I would say that some portions of over designing this application was allowing for scalability. As I was working on this project I found myself working in waves. The first wave was a very basic thought process of obtaining the desired coin information and showing this. Once I had this done, I thought of ways that would improve the ease of adding other coins. My program allows for easy incorporation of other coins from these exchange companies as well as integrating other companies. The only new information requited is that you input the correct symbol to represent a coin and a key to refer to that symbol (the name of the coin). This also ties into how I structured return values, I a dictionary to make accessing values easier as oppose to some other datatype.
  Another over-designed aspect of this application is the front end. I may have taken the easy route of creating a webpage that delivers the desired information, but I believe a more eye catching view would make for a better user experience.
