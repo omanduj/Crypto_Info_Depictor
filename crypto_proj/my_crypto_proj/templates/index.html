@@ -12,98 +12,105 @@
                  </header>
                  <h1><span>Keep With</span> The Current Prices</h1>
                  <p>Check Out the Purchase and Selling Price of the Hottest Coins Here</p>
-                 <a type="personal" href="https://www.coinbase.com/price" target="_blank"> <h2><u> Coinbase Prices</u></h2></a>
-
-                     <div class="side-column">
-                         <div class="form-container">
-                             <form action="">
-                                 <div class="form-left">
-                                     <label for="coin">Etherium</label>
-                                     <div class="side-column">
-                                         <label type="distinguisher">Sell Price</label>
-                                         <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Etherium"].sell }} {{ "USD" }}</label>
-                                    </div>
-                                    <div class="side-column">
-                                        <label type="distinguisher">Purchase Price</label>
-                                        <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Etherium"].purchase }} {{ "USD" }}</label>
+                 <div class="main-column">
+                     <a type="personal" href="https://www.coinbase.com/price" target="_blank"> <h2><u> Coinbase Prices</u></h2></a>
+                    <div class="form-container">
+                         <form action="">
+                             <div class="form-left">
+                                 <label for="coin">Bitcoin</label>
+                                  <div class="main-column">
+                                      <label type="distinguisher">Sell Price</label>
+                                      <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Bitcoin"].sell }} {{ "USD" }}</label>
+                                 </div>
+                                 <div class="main-column">
+                                     <label type="distinguisher">Purchase Price</label>
+                                     <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Bitcoin"].purchase }} {{ "USD" }}</label>
+                                </div>
+                             </div>
+                             <p class="suggestion">Best place to buy is at {{ optimal_coin_info["best_buy"]["Bitcoin"]["company"] }} with a price of {{ optimal_coin_info["best_buy"]["Bitcoin"]["purchase"] }}</p>
+                             <p>Best place to sell is at {{ optimal_coin_info["best_sell"]["Bitcoin"]["company"] }} with a price of {{ optimal_coin_info["best_sell"]["Bitcoin"]["purchase"] }}</p>
+                             <input type="button" value="Buy Now"></input>
+                         </form>
+                     </div>
+                 </div>
+                 <div class="main-column">
+                     <a type="web_link2" href="https://www.blockchain.com/prices" target="_blank"> <h2><u> Blockchain Prices</u></h2></a>
+                    <div class="form-container">
+                         <form action="">
+                             <div class="form-left">
+                                 <label for="coin">Bitcoin</label>
+                                  <div class="main-column">
+                                      <label type="distinguisher">Sell Price</label>
+                                      <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Bitcoin"].sell }} {{ "USD" }}</label>
+                                 </div>
+                                 <div class="main-column">
+                                     <label type="distinguisher">Purchase Price</label>
+                                     <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Bitcoin"].purchase }} {{ "USD" }}</label>
+                                </div>
+                             </div>
+                             <p class="suggestion">Best place to buy is at {{ optimal_coin_info["best_buy"]["Bitcoin"]["company"] }} with a price of {{ optimal_coin_info["best_buy"]["Bitcoin"]["purchase"] }}</p>
+                             <p>Best place to sell is at {{ optimal_coin_info["best_sell"]["Bitcoin"]["company"] }} with a price of {{ optimal_coin_info["best_sell"]["Bitcoin"]["purchase"] }}</p>                             <input type="button" value="Buy Now"></input>
+                         </form>
+                     </div>
+                 </div>
+                 <div class="side-column">
+                     <div class="form-container">
+                         <form action="">
+                             <div class="form-left">
+                                 <label for="coin">Etherium</label>
+                                 <div class="side-column">
+                                     <label type="distinguisher">Sell Price</label>
+                                     <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Etherium"].sell }} {{ "USD" }}</label>
                                    </div>
-                                 </div>
-                                 <p class="suggestion">Best place to buy is: MM</p>
-                                 <input type="button" value="Buy Now"></input>
-                             </form>
-                         </div>
+                                   <div class="side-column">
+                                       <label type="distinguisher">Purchase Price</label>
+                                       <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Etherium"].purchase }} {{ "USD" }}</label>
+                                  </div>
+                             </div>
+                             <p class="suggestion">Best place to buy is at {{ optimal_coin_info["best_buy"]["Etherium"]["company"] }} with a price of {{ optimal_coin_info["best_buy"]["Etherium"]["purchase"] }}</p>
+                             <p>Best place to sell is at {{ optimal_coin_info["best_sell"]["Etherium"]["company"] }} with a price of {{ optimal_coin_info["best_sell"]["Etherium"]["purchase"] }}</p>
+                             <input type="button" value="Buy Now"></input>
+                         </form>
                      </div>
-                     <div class="main-column">
-                        <div class="form-container">
-                             <form action="">
-                                 <div class="form-left">
-                                     <label for="coin">Bitcoin</label>
-                                      <div class="main-column">
-                                          <label type="distinguisher">Sell Price</label>
-                                          <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Bitcoin"].sell }} {{ "USD" }}</label>
-                                     </div>
-                                     <div class="main-column">
-                                         <label type="distinguisher">Purchase Price</label>
-                                         <label type="text" name="coin" id="coin">{{ "$" }} {{ coinbase_coins["Bitcoin"].purchase }} {{ "USD" }}</label>
-                                    </div>
-                                 </div>
-                                  <p class="suggestion">Best place to buy is: MM</p>
-                                 <input type="button" value="Buy Now"></input>
-                             </form>
-                         </div>
-                     </div>
-                     <div class="frog">
-                         <a type="web_link2" href="https://www.blockchain.com/prices" target="_blank"> <h2><u> Blockchain Prices</u></h2></a>
-                    </div>
-                     <div class="side-column">
-                         <div class="form-container">
-                             <form action="">
-                                 <div class="form-left">
-                                     <label for="coin">Etherium</label>
-                                     <div class="side-column">
-                                         <label type="distinguisher">Sell Price</label>
-                                         <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Etherium"].sell }} {{ "USD" }}</label>
-                                    </div>
-                                    <div class="side-column">
-                                        <label type="distinguisher">Purchase Price</label>
-                                        <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Etherium"].purchase }} {{ "USD" }}</label>
+                 </div>
+                 <div class="side-column">
+                     <div class="form-container">
+                         <form action="">
+                             <div class="form-left">
+                                 <label for="coin">Etherium</label>
+                                 <div class="side-column">
+                                     <label type="distinguisher">Sell Price</label>
+                                     <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Etherium"].sell }} {{ "USD" }}</label>
                                    </div>
-                                 </div>
-                                 <p class="suggestion">Best place to buy is: MM</p>
-                                 <input type="button" value="Buy Now"></input>
-                             </form>
-                         </div>
+                                   <div class="side-column">
+                                       <label type="distinguisher">Purchase Price</label>
+                                       <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Etherium"].purchase }} {{ "USD" }}</label>
+                                  </div>
+                             </div>
+                             <p class="suggestion">Best place to buy is at {{ optimal_coin_info["best_buy"]["Etherium"]["company"] }} with a price of {{ optimal_coin_info["best_buy"]["Etherium"]["purchase"] }}</p>
+                             <p>Best place to sell is at {{ optimal_coin_info["best_sell"]["Etherium"]["company"] }} with a price of {{ optimal_coin_info["best_sell"]["Etherium"]["purchase"] }}</p>
+                             <input type="button" value="Buy Now"></input>
+                         </form>
                      </div>
-                     <div class="main-column">
-                        <div class="form-container">
-                             <form action="">
-                                 <div class="form-left">
-                                     <label for="coin">Bitcoin</label>
-                                      <div class="main-column">
-                                          <label type="distinguisher">Sell Price</label>
-                                          <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Bitcoin"].sell }} {{ "USD" }}</label>
-                                     </div>
-                                     <div class="main-column">
-                                         <label type="distinguisher">Purchase Price</label>
-                                         <label type="text" name="coin" id="coin">{{ "$" }} {{ blockchain_coins["Bitcoin"].purchase }} {{ "USD" }}</label>
-                                    </div>
-                                 </div>
-                                  <p class="suggestion">Best place to buy is: MM</p>
-                                 <input type="button" value="Buy Now"></input>
-                             </form>
-                         </div>
-                     </div>
-
-
+                 </div>
                  <div class="arrow">
                      <img src="https://img.icons8.com/color-glass/96/000000/chevron-down.png"/>
                  </div>
              </section>
          </div>
+
+
+
+
         <section class="authentic">
             <div class="right-col">
-                <h2>Check Out Some Other Prices!</h2>
-                <p>lorem impsum</p>
+                <h1>Check Out Some Other Prices!</h1>
+
+                <p>Dogecoin: Price at Coinbase at {{ "$" }} {{ coinbase_coins["Dogecoin"].purchase }} {{ "USD" }} </p>
+                <p>Dogecoin: Selling at Coinbase at {{ "$" }} {{ coinbase_coins["Dogecoin"].sell }} {{ "USD" }} </p>
+                <br>
+                <p>Dogecoin: Price at Blockchain at {{ "$" }} {{ blockchain_coins["Dogecoin"].purchase }} {{ "USD" }} </p>
+                <p>Dogecoin: Selling at Blockchain at {{ "$" }} {{ blockchain_coins["Dogecoin"].sell }} {{ "USD" }} </p>
             </div>
             <img src="static/css/piggy_bank.jpg" alt="Picture of Piggy Bank">
         </section>
