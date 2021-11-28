@@ -127,3 +127,4 @@ def find_best(coin_name_dict):
             }
 
     return dict_of_locations
+find_best({"Bitcoin": "BTC-USD", "Ethereum": "ETH-USD", "Dogecoin": "DOGE-USD"})
