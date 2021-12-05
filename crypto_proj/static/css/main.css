@@ -93,6 +93,7 @@ label {
     font-weight: bold;
     margin-bottom: .5em;
     font-size: 3em;
+    overflow: hidden
 }
 
 .hero-bg label[type=distinguisher] {
@@ -155,6 +156,11 @@ when you hover over it: */
     margin: 0;
 }
 
+.piggy {
+    background: url('piggy_bank.jpg');
+    background-size: 100% 100%;
+}
+
 .top {
     animation: fadeIn 2s forwards;
 }
@@ -195,7 +201,7 @@ h2 {
     }
     section.authentic {
         display: grid;
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: repeat(1, 50%);
         grid-template-areas:
             "piggy content";
     }
