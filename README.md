@@ -1,4 +1,4 @@
-Crypto Info Depictor
+Crypto Info Depictor - oman.pythonanywhere.com
 =======
 
 What you'll see
