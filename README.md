@@ -1,7 +1,7 @@
-Crypto Info Depictor - oman.pythonanywhere.com
+Crypto Info Depictor 
 =======
 
-What you'll see
+What you'll see - oman.pythonanywhere.com
 -----------
 This project will create a webpage depicting the purchase and sell price of Crypto Currencies, specifically
 Bitcoin and Ethereum from coinbase and blockchain. It will also provide recommendations in regards to which exchange one should buy and/or sell from.
