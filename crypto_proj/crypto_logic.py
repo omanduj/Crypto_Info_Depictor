@@ -3,7 +3,7 @@ import json
 
 
 class CoinInfo:
-    """Purpose: To crease an object to hold all info on coins
+    """Purpose: To create an object to hold all info on coins
     Parameters: None
     Return Value: None
     """
