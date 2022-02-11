@@ -1,7 +1,7 @@
-Crypto Info Depictor
+Crypto Info Depictor 
 =======
 
-What you'll see
+What you'll see - oman.pythonanywhere.com
 -----------
 This project will create a webpage depicting the purchase and sell price of Crypto Currencies, specifically
 Bitcoin and Ethereum from coinbase and blockchain. It will also provide recommendations in regards to which exchange one should buy and/or sell from.
@@ -29,7 +29,7 @@ In order to run the application, you must execute the following command:
 You can visit the following link to get the json representation of the best and worst locations to purchase a given coin:
 >http://127.0.0.1:5000/coin_info
 
- Questionnaire
+ Optimizations 
  -----------
  1. One optimization is allowing the system to fail gracefully. This means allowing coins found at one exchange
  location to be obtainable, despite not being found in the other exchange place. Another optimization would lie in how I store data in the logic layer. I believe I could have dealt with any issue of memory usage by creating a database as opposed to making a dictionary of coins again and again, thus increasing speed as well.
